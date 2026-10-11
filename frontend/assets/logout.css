@@ -1,0 +1,5 @@
+.logout-controls { display: inline-flex; align-items: center; gap: 8px; flex-wrap: wrap; font-size: 14px; }
+#logout-button { background: white; color: #174c8f; border: 1px solid #b8c9df; border-radius: 6px; padding: 8px 12px; cursor: pointer; white-space: nowrap; }
+#logout-button:hover { background: #edf3fc; }
+#logout-button:focus-visible { outline: 2px solid #174c8f; outline-offset: 2px; }
+#logout-message { color: #a12020; font-size: 13px; }

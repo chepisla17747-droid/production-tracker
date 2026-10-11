@@ -1,0 +1,45 @@
+2026-10-05 17:16:30 +0700 ERROR [uvicorn.error] Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Desktop\4th year project\.venv\Lib\site-packages\starlette\routing.py", line 648, in lifespan
+    async with self.lifespan_context(app) as maybe_state:
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Desktop\4th year project\.venv\Lib\site-packages\fastapi\routing.py", line 240, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Desktop\4th year project\backend\fastapi\post.py", line 94, in lifespan
+    admin_settings = read_database_config(ROOT / '.env.admin')
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Desktop\4th year project\backend\database.py", line 17, in read_database_config
+    raise ValueError(f"Missing database settings in {path.name}: {', '.join(missing)}")
+ValueError: Missing database settings in .env.admin: DB_HOST, DB_PORT, DB_NAME, DB_USER, DB_PASSWORD
+
+2026-10-05 17:16:30 +0700 ERROR [uvicorn.error] Application startup failed. Exiting.
+2026-10-05 17:16:30 +0700 CRITICAL [tracker.server] Server stopped: start-up failed (exit status 3)
+2026-10-05 17:18:38 +0700 ERROR [uvicorn.error] Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Desktop\4th year project\.venv\Lib\site-packages\starlette\routing.py", line 648, in lifespan
+    async with self.lifespan_context(app) as maybe_state:
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Desktop\4th year project\.venv\Lib\site-packages\fastapi\routing.py", line 240, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Desktop\4th year project\backend\fastapi\post.py", line 94, in lifespan
+    admin_settings = read_database_config(ROOT / '.env.admin')
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Desktop\4th year project\backend\database.py", line 17, in read_database_config
+    raise ValueError(f"Missing database settings in {path.name}: {', '.join(missing)}")
+ValueError: Missing database settings in .env.admin: DB_HOST, DB_PORT, DB_NAME, DB_USER, DB_PASSWORD
+
+2026-10-05 17:18:38 +0700 ERROR [uvicorn.error] Application startup failed. Exiting.
+2026-10-05 17:18:38 +0700 CRITICAL [tracker.server] Server stopped: start-up failed (exit status 3)
+2026-10-05 18:45:22 +0700 ERROR [backend.fastapi.post] Database operation failed: OperationalError
+2026-10-05 18:46:10 +0700 ERROR [uvicorn.error] [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8000): only one usage of each socket address (protocol/network address/port) is normally permitted
+2026-10-05 18:46:10 +0700 CRITICAL [tracker.server] Server stopped: start-up failed (exit status 3)
+2026-10-05 18:47:04 +0700 ERROR [uvicorn.error] [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8000): only one usage of each socket address (protocol/network address/port) is normally permitted
+2026-10-05 18:47:04 +0700 CRITICAL [tracker.server] Server stopped: start-up failed (exit status 3)

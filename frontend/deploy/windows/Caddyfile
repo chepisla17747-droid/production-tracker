@@ -1,0 +1,19 @@
+# HTTPS front for Production Tracker on Windows (see docs/deployment/windows-intranet.md).
+# Replace tracker.example.internal with the intranet name users type. It must match
+# TRACKER_PUBLIC_ORIGIN in C:\ProductionTracker\app\.env.app exactly, e.g. https://tracker.example.internal
+{
+	# Caddy runs as LocalService and must not try to change this server's certificate store.
+	skip_install_trust
+}
+
+tracker.example.internal {
+	# Option A: a certificate from the company's certificate authority (PEM files).
+	tls C:/ProductionTracker/caddy/certs/tracker.crt C:/ProductionTracker/caddy/certs/tracker.key
+
+	# Option B: Caddy's own certificate authority. Delete the line above, uncomment the line
+	# below, and install data\caddy\pki\authorities\local\root.crt on every client device.
+	# tls internal
+
+	encode gzip
+	reverse_proxy 127.0.0.1:8000
+}

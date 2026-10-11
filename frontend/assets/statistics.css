@@ -1,0 +1,208 @@
+/* Statistics page. Reuses the planner/supervisor shell; adds tiles, tables and charts. */
+
+.statistics-page .stat-filter-panel {
+    background: #fff;
+    border: 1px solid #e2e6ee;
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    margin: 1rem 0;
+}
+
+.statistics-page .stat-filter-panel > summary {
+    cursor: pointer;
+    font-weight: 600;
+    padding: 0.25rem 0;
+}
+
+.stat-filters {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 0.75rem 1rem;
+    margin-top: 0.75rem;
+}
+
+.stat-quick {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 0.75rem 0;
+}
+
+.stat-quick label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.stat-saved {
+    display: grid;
+    grid-template-columns: minmax(200px, 1.5fr) minmax(160px, 1fr) auto auto;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.stat-distribution-controls {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.75rem 1rem;
+    margin: 1rem 0;
+}
+
+.stat-body {
+    margin-top: 1rem;
+}
+
+.stat-body > * + * {
+    margin-top: 1rem;
+}
+
+.stat-tiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 0.75rem;
+}
+
+.stat-tile {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    background: #fff;
+    border: 1px solid #e2e6ee;
+    border-radius: 12px;
+    padding: 0.9rem 1rem;
+    text-align: left;
+}
+
+.stat-tile-label {
+    font-size: 0.82rem;
+    color: #5b6472;
+}
+
+.stat-tile-value {
+    font-size: 1.5rem;
+    line-height: 1.2;
+    color: #1d2533;
+}
+
+.stat-tile-hint {
+    font-size: 0.75rem;
+    color: #78818f;
+}
+
+.stat-tile-clickable {
+    cursor: pointer;
+    font: inherit;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.stat-tile-clickable:hover,
+.stat-tile-clickable:focus-visible {
+    border-color: #3f6cb4;
+    box-shadow: 0 0 0 3px rgba(63, 108, 180, 0.15);
+}
+
+.stat-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.stat-table th,
+.stat-table td {
+    text-align: left;
+    padding: 0.5rem 0.65rem;
+    border-bottom: 1px solid #edf0f5;
+    white-space: nowrap;
+}
+
+.stat-table th {
+    position: sticky;
+    top: 0;
+    background: #f7f9fc;
+    font-weight: 600;
+    z-index: 1;
+}
+
+.stat-table tbody tr:hover {
+    background: #f7f9fc;
+}
+
+.stat-adjusted-row td {
+    color: #3f6cb4;
+}
+
+/* Excluded upper outliers stay visible and inspectable; they are never deleted. */
+.stat-outlier-row td {
+    background: #fff7ed;
+}
+
+.stat-scroll {
+    overflow-x: auto;
+    max-height: 32rem;
+    overflow-y: auto;
+}
+
+.stat-records {
+    min-width: 60rem;
+}
+
+.stat-rule {
+    border-left: 3px solid #cbd3e1;
+    padding-left: 0.75rem;
+}
+
+.stat-empty {
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.stat-record-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0.75rem 0;
+}
+
+.page-nav {
+    display: flex;
+    gap: 0.25rem;
+    margin-right: 0.75rem;
+}
+
+.page-nav .nav-link {
+    padding: 0.35rem 0.7rem;
+    border-radius: 999px;
+    color: inherit;
+    text-decoration: none;
+    font-size: 0.88rem;
+}
+
+.page-nav .nav-link:hover,
+.page-nav .nav-link:focus-visible {
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.page-nav .nav-link.active {
+    background: rgba(255, 255, 255, 0.28);
+    font-weight: 600;
+}
+
+@media (max-width: 720px) {
+    .stat-saved {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-tile-value {
+        font-size: 1.25rem;
+    }
+
+    .page-nav {
+        flex-wrap: wrap;
+        margin-right: 0;
+    }
+
+    .stat-table th,
+    .stat-table td {
+        padding: 0.4rem 0.5rem;
+    }
+}

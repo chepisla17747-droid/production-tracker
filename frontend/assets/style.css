@@ -1,0 +1,638 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #111a2e;
+}
+.login-page {
+    min-height: 100vh;
+    background: #111a2e;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 32px 20px 24px;
+}
+
+.header {
+    text-align: center;
+    color: white;
+    margin-bottom: 28px;
+}
+
+.logo {
+    width: 62px;
+    height: 62px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #2463e8;
+    border-radius: 14px;
+
+    font-size: 32px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.header p {
+    margin: 10px 0 0;
+    font-size: 18px;
+    color: #aeb8cc;
+}
+.login-card {
+    width: min(100%, 550px);
+    /* The card's padding must stay inside its width, or a phone scrolls sideways. */
+    box-sizing: border-box;
+
+    background: white;
+    border-radius: 14px;
+
+    padding: 32px 30px;
+
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
+}
+
+.login-card h2 {
+    margin: 0;
+    text-align: center;
+
+    color: #162033;
+    font-size: 28px;
+}
+
+.subtitle {
+    text-align: center;
+
+    margin: 10px 0 30px;
+
+    color: #5f6673;
+    font-size: 18px;
+}
+.label {
+    display: inline-block;
+    margin-bottom: 8px;
+
+    color: #263246;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.required {
+    color: #c5222c;
+    font-size: 18px;
+}
+
+.input {
+    width: 100%;
+    height: 68px;
+
+    margin-bottom: 20px;
+    padding: 0 18px;
+
+    border: 1px solid #edf0f5;
+    border-radius: 8px;
+
+    background: white;
+
+    font-size: 18px;
+    color: #202b3d;
+
+    box-sizing: border-box;
+
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.03);
+}
+
+.input::placeholder {
+    color: #8c919a;
+}
+.dropdown {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.dropdown .Select-control {
+    height: 68px;
+
+    display: flex;
+    align-items: center;
+
+    border: 1px solid #edf0f5;
+    border-radius: 8px;
+
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.03);
+}
+
+.dropdown .Select-placeholder {
+    font-size: 18px;
+    color: #202b3d;
+}
+.login-button {
+    width: 100%;
+    height: 62px;
+
+    margin-top: 8px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #182238;
+    color: white;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.login-button:hover {
+    background: #243452;
+}
+
+.footer {
+    text-align: center;
+    color: white;
+
+    margin-top: 28px;
+}
+
+.footer-main {
+    margin: 3px 0;
+
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.footer-sub {
+    margin-top: 18px;
+
+    font-size: 12px;
+    color: #8995aa;
+}
+.password-wrapper {
+    position: relative;
+}
+
+.password-input {
+    padding-right: 55px;
+}
+
+.password-eye {
+    position: absolute;
+
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    border: none;
+    background: transparent;
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+/* =================================
+   PLANNER PAGE
+================================= */
+
+.planner-page {
+    min-height: 100vh;
+    background: #f5f7fb;
+    color: #172238;
+    padding-bottom: 90px;
+}
+
+.top-bar {
+    height: 72px;
+    background: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 24px;
+
+    box-sizing: border-box;
+}
+
+/* On a phone the page links wrap: let the bar grow and put them on their own row, rather
+   than overflowing a fixed height onto the page heading. */
+@media (max-width: 720px) {
+    .top-bar {
+        height: auto;
+        min-height: 72px;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+    .top-bar .logout-controls { width: 100%; }
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-icon {
+    width: 38px;
+    height: 38px;
+
+    background: #182238;
+    color: #38bdf8;
+
+    border-radius: 9px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+}
+
+.brand-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: #2563a8;
+    letter-spacing: 1px;
+}
+
+.brand-title {
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.top-actions {
+    display: flex;
+    gap: 18px;
+    font-size: 27px;
+}
+
+.breadcrumb {
+    display: flex;
+    gap: 10px;
+
+    padding: 18px 24px 8px;
+
+    font-size: 15px;
+    color: #64748b;
+}
+
+.current-page {
+    color: #2563a8;
+    font-weight: 700;
+}
+
+.planner-mode {
+    width: fit-content;
+
+    margin: 0 24px 18px auto;
+    padding: 7px 13px;
+
+    background: #e7efff;
+    color: #4b5563;
+
+    border-radius: 20px;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.planner-content {
+    max-width: 900px;
+    margin: auto;
+    padding: 0 24px;
+}
+
+.form-card,
+.info-card {
+    background: white;
+    border-radius: 14px;
+
+    padding: 22px;
+
+    margin-bottom: 18px;
+
+    box-shadow: 0 2px 8px rgba(20, 35, 60, 0.05);
+}
+
+.two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.form-label {
+    display: block;
+
+    margin: 0 0 8px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    letter-spacing: .5px;
+
+    color: #4b5563;
+}
+
+.form-input {
+    width: 100%;
+    height: 54px;
+
+    box-sizing: border-box;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #eef3ff;
+
+    padding: 0 15px;
+
+    font-size: 16px;
+    color: #172238;
+
+    margin-bottom: 18px;
+}
+
+.product-dropdown {
+    margin-bottom: 18px;
+}
+
+.product-dropdown .Select-control {
+    height: 54px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #eef3ff;
+
+    box-shadow: none;
+}
+
+.date-picker {
+    width: 100%;
+    margin-bottom: 18px;
+}
+
+.date-picker .DateInput {
+    width: 100%;
+    background: #eef3ff;
+    border-radius: 8px;
+}
+
+.date-picker .DateInput_input {
+    height: 54px;
+
+    background: #eef3ff;
+
+    border-radius: 8px;
+    border: none;
+
+    font-size: 16px;
+    color: #172238;
+}
+
+.card-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 16px;
+}
+
+.section-title {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: .7px;
+}
+
+.revision {
+    background: #e3edff;
+    color: #2563a8;
+
+    padding: 6px 12px;
+
+    border-radius: 18px;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.product-preview {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    background: #eef3ff;
+
+    border-radius: 9px;
+
+    padding: 14px;
+}
+
+.product-image-placeholder {
+    width: 82px;
+    height: 82px;
+
+    border-radius: 7px;
+
+    background: #d7e0f2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #2563a8;
+    font-weight: 800;
+}
+
+.product-preview h3 {
+    margin: 0 0 5px;
+    font-size: 17px;
+}
+
+.product-preview p {
+    margin: 0 0 5px;
+
+    color: #64748b;
+    font-size: 14px;
+}
+
+.ready-text {
+    color: #2563a8;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.process-icon {
+    margin-right: 10px;
+    color: #2563a8;
+    font-size: 21px;
+}
+
+.process-row {
+    min-height: 54px;
+
+    display: grid;
+    grid-template-columns: 34px 1fr auto;
+    align-items: center;
+
+    border-bottom: 1px solid #e7ebf2;
+
+    font-size: 16px;
+}
+
+.process-row:last-child {
+    border-bottom: none;
+}
+
+.step-number {
+    width: 29px;
+    height: 29px;
+
+    border-radius: 50%;
+
+    background: #2167c8;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 13px;
+}
+
+.process-time {
+    color: #64748b;
+}
+
+.create-button {
+    width: 100%;
+    height: 60px;
+
+    border: none;
+    border-radius: 9px;
+
+    background: #079669;
+    color: white;
+
+    font-size: 17px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow: 0 5px 12px rgba(0, 120, 80, .15);
+}
+
+.create-button:hover {
+    background: #087f5b;
+}
+
+.bottom-nav {
+    position: fixed;
+
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    height: 76px;
+
+    background: white;
+
+    border-top: 1px solid #e5e9f0;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    z-index: 10;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+
+    color: #596273;
+
+    font-size: 23px;
+}
+
+.nav-item span {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.nav-item.active {
+    color: #2167c8;
+}
+
+.quantity-wrapper {
+    position: relative;
+}
+
+.quantity-wrapper .form-input {
+    padding-right: 70px;
+}
+
+.quantity-unit {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #64748b;
+    font-size: 14px;
+    font-weight: 600;
+    pointer-events: none;
+}
+
+.product-image {
+    width: 82px;
+    height: 82px;
+    object-fit: cover;
+    border-radius: 7px;
+}
+
+/* Login and activation messages: clearly separated from the button, and clearly a problem. */
+#login-message, #activate-message {
+    margin-top: 22px;
+    color: #c0392b;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: center;
+}
+#login-message:empty, #activate-message:empty { margin-top: 0; }
+/* A success notice inside those pages keeps its own colours. */
+#activate-message .planner-notice { color: #176244; font-weight: 500; text-align: left; }
+#activate-message .planner-notice.error { color: #a3332b; }
+
+/* Language switch: two small flags beside Log out. */
+.language-switch { display: inline-flex; gap: 6px; margin-left: 14px; vertical-align: middle; }
+.language-button {
+    padding: 2px; line-height: 0; cursor: pointer; background: transparent;
+    border: 2px solid transparent; border-radius: 5px; opacity: .55;
+}
+.language-button img { width: 26px; height: 13px; display: block; border-radius: 2px; }
+.language-button:hover { opacity: .85; }
+.language-button.chosen { opacity: 1; border-color: #2563a8; }
+.login-card .language-switch { display: flex; justify-content: center; margin: 20px 0 0; }
+
+/* Keyboard focus: one visible outline for every custom-styled control. */
+.part-card:focus-visible, .planner-text-button:focus-visible, .planner-secondary:focus-visible,
+.create-button:focus-visible, .language-button:focus-visible, .draft-step:focus-visible,
+.part-quick:focus-visible, details > summary:focus-visible, .image-upload:focus-within,
+.stat-tile-clickable:focus-visible, .tab-container .tab:focus-visible {
+    outline: 3px solid #2563a8;
+    outline-offset: 2px;
+}

@@ -1,0 +1,90 @@
+/* Operations Administrator page; scoped so the other role pages are untouched. */
+.operations-page .planner-content { max-width: 1120px; }
+.operations-page h3 { font-size: 15px; margin: 24px 0 10px; }
+#operations-accounts-section, #operations-products-section,
+#operations-processes-section, #operations-employees-section { margin-top: 24px; }
+#employee-search { margin-bottom: 18px; }
+
+.account-state { border-radius: 20px; padding: 4px 10px; font-size: 12px; background: #e7efff; color: #245997; }
+.account-state.awaiting { background: #fff4e5; color: #96560c; }
+.account-state.disabled { background: #f1f3f7; color: #5b6472; }
+.setup-link { margin-top: 10px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; }
+
+.image-field { margin: 16px 0; }
+.image-upload { border: 1px dashed #c8d6e7; border-radius: 10px; padding: 18px; text-align: center;
+                cursor: pointer; font-size: 14px; color: #475569; }
+.image-upload a { color: #2563a8; }
+.image-preview img, .product-thumb { border-radius: 8px; background: #fafbfd; }
+.image-preview img { max-width: 240px; max-height: 160px; margin-top: 12px; object-fit: contain; }
+.product-thumb { width: 56px; height: 42px; object-fit: contain; vertical-align: middle; }
+.product-thumb.empty { display: inline-flex; align-items: center; justify-content: center;
+                       font-size: 10px; color: #94a3b8; border: 1px solid #e4e9f1; }
+
+.process-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; margin-top: 8px; }
+.draft-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; margin-top: 20px; }
+.draft-list { min-width: 0; }
+.draft-step-row { display: flex; align-items: center; gap: 8px; border: 1px solid #e1e7ef;
+                  border-radius: 10px; background: white; margin-bottom: 8px; padding: 6px 10px; }
+.draft-step { flex: 1; display: flex; align-items: center; gap: 10px; min-width: 0;
+              background: transparent; border: 0; cursor: pointer; text-align: left; padding: 8px 0; }
+.draft-step.selected { font-weight: 600; }
+.draft-step-row:has(.draft-step.selected) { border-color: #abc9ec; background: #f4f8fd; }
+.draft-step-name { overflow-wrap: anywhere; }
+.draft-step-actions { display: flex; gap: 4px; flex-shrink: 0; }
+.draft-step-actions button { padding: 6px; }
+.step-editor { border: 1px solid #e4e9f1; border-radius: 12px; padding: 20px; background: white; min-width: 0; }
+
+@media (max-width: 720px) {
+    .draft-grid { grid-template-columns: 1fr; gap: 16px; }
+    .draft-step-row { flex-wrap: wrap; }
+    .step-editor { padding: 16px; }
+    .setup-link { font-size: 12px; }
+}
+
+/* Profile page */
+.profile-page .planner-content { max-width: 1000px; }
+.profile-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start;
+                padding-top: 24px; }
+.profile-forms { display: grid; gap: 24px; min-width: 0; }
+.profile-list { margin: 0; }
+.profile-detail { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 12px;
+                  padding: 11px 0; border-bottom: 1px solid #edf0f5; }
+.profile-detail dt { color: #64748b; font-size: 13px; }
+.profile-detail dd { margin: 0; overflow-wrap: anywhere; }
+.profile-list .planner-muted { margin-top: 18px; }
+
+@media (max-width: 720px) {
+    .profile-grid { grid-template-columns: 1fr; gap: 16px; padding-top: 16px; }
+    .profile-detail { grid-template-columns: 1fr; gap: 2px; }
+}
+
+/* Website roles on an employee row */
+.employee-roles { display: block; margin: 6px 0 0 24px; font-size: 13px; color: #245997; }
+.role-checklist { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-bottom: 18px; }
+.role-checklist label { display: inline-flex; align-items: center; gap: 4px; font-size: 14px; }
+.role-checklist input:disabled + span, .role-checklist label:has(input:disabled) { color: #94a3b8; }
+
+/* Activation codes */
+.activation-code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+                   letter-spacing: 2px; font-size: 16px; }
+.activation-handout { background: #f4f8fd; border: 1px solid #dbe6f4; border-radius: 10px;
+                      padding: 14px 16px; margin-top: 12px; }
+.activation-handout .profile-detail { border-bottom: 0; padding: 4px 0; }
+.login-help { margin-top: 18px; font-size: 14px; color: #64748b; text-align: center; }
+.activate-details { margin-bottom: 20px; }
+.activate-details .profile-detail { grid-template-columns: 110px minmax(0, 1fr); }
+#activate-code { text-transform: uppercase; }
+
+/* Account panel inside an employee row */
+.account-state-line { display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+                      margin-bottom: 14px; }
+.account-actions { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center;
+                   margin-bottom: 12px; }
+.account-state.none { background: #f1f3f7; color: #5b6472; }
+.account-state.pending { background: #fff4e5; color: #96560c; }
+.account-state.active { background: #e7efff; color: #245997; }
+.history-list { list-style: none; padding: 0; margin: 8px 0 0; display: grid; gap: 6px; }
+.history-entry { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline;
+    font-size: 13px; border-bottom: 1px solid #edf0f5; padding-bottom: 6px; }
+.history-time { color: #5b6472; font-variant-numeric: tabular-nums; }
+.history-action { font-weight: 600; }

@@ -1,0 +1,28 @@
+<!--
+  Production Tracker website as a Windows service, run by WinSW 2.12. Copy WinSW-x64.exe to C:\ProductionTracker\service\production-tracker-service.exe and this
+  file next to it as production-tracker-service.xml, then run: production-tracker-service.exe install
+  Steps and folder permissions: docs/deployment/windows-intranet.md
+-->
+<service>
+  <id>production-tracker</id>
+  <name>Production Tracker</name>
+  <description>Production Tracker website on 127.0.0.1:8000 (python -m backend.serve). Restarts after a crash.</description>
+  <executable>C:\ProductionTracker\app\.venv\Scripts\python.exe</executable>
+  <arguments>-m backend.serve</arguments>
+  <workingdirectory>C:\ProductionTracker\app</workingdirectory>
+  <!-- Match the PostgreSQL service name shown by: Get-Service postgresql* -->
+  <depend>postgresql-x64-18</depend>
+  <serviceaccount>
+    <domain>NT AUTHORITY</domain>
+    <user>LocalService</user>
+  </serviceaccount>
+  <!-- A database that is down at boot must not leave the site off: keep retrying. -->
+  <onfailure action="restart" delay="5 sec"/>
+  <resetfailure>1 hour</resetfailure>
+  <!-- Console output (access log). Errors go to C:\ProductionTracker\app\logs\errors.log. -->
+  <logpath>%BASE%\logs</logpath>
+  <log mode="roll-by-size">
+    <sizeThreshold>10240</sizeThreshold>
+    <keepFiles>8</keepFiles>
+  </log>
+</service>

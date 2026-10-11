@@ -1,0 +1,60 @@
+/* Scoped additions preserve the other role pages. */
+.persistent-planner .planner-content { max-width: 1120px; padding-top: 28px; }
+.persistent-planner h1 { font-size: 28px; margin: 0 0 8px; letter-spacing: -.6px; }
+.persistent-planner h2 { font-size: 18px; margin: 0 0 22px; }
+.planner-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 26px; }
+.planner-muted { color: #64748b; font-size: 14px; line-height: 1.6; }
+.planner-badge { color: #245997; background: #e7efff; border-radius: 20px; padding: 6px 12px; font-size: 12px; }
+.planner-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 24px; padding-top: 24px; align-items: start; }
+.planner-field { margin-bottom: 20px; min-width: 0; }
+.persistent-planner .form-label { font-size: 12px; text-transform: uppercase; }
+.persistent-planner .form-input { background: #f8fafc; border: 1px solid #dce3ee; height: 44px; }
+.persistent-planner .form-input:focus { outline: 2px solid #82b7f2; outline-offset: 2px; }
+.persistent-planner .form-card, .persistent-planner .info-card { border: 1px solid #e4e9f1; box-shadow: 0 4px 18px #17223805; }
+.persistent-planner .DateInput, .persistent-planner .SingleDatePicker, .persistent-planner .SingleDatePickerInput { width: 100%; }
+.persistent-planner .DateInput_input { font-size: 14px; padding: 10px; box-sizing: border-box; }
+.persistent-planner .create-button { margin-top: 10px; width: 100%; }
+.planner-secondary { background: #2563a8; border: 0; color: white; padding: 11px 18px; border-radius: 8px; font-weight: 600; cursor: pointer; }
+.planner-text-button { background: transparent; border: 0; color: #2563a8; cursor: pointer; padding: 8px 0; }
+.persistent-planner button:disabled { opacity: .55; cursor: wait; }
+.contractor-add { border: 1px dashed #c8d6e7; border-radius: 10px; margin: 4px 0 24px; }
+.contractor-add > summary { color: #2563a8; padding: 14px; font-size: 14px; font-weight: 600; cursor: pointer; }
+.contractor-fields { padding: 20px; }
+.contractor-row { border: 1px solid #e1e7ef; border-radius: 12px; background: white; margin-top: 12px; overflow: hidden; }
+.contractor-row > summary { padding: 20px; cursor: pointer; }
+.contractor-row[open] { border-color: #abc9ec; box-shadow: 0 3px 16px #2563a80a; }
+.contractor-row[open] > summary { background: #f4f8fd; border-bottom: 1px solid #e1e7ef; }
+.contractor-name { font-weight: 600; margin-left: 8px; }
+.contractor-contact { color: #64748b; font-size: 13px; display: block; margin: 6px 0 0 24px; overflow-wrap: anywhere; }
+#planner-contractor-section { margin-top: 24px; }
+#contractor-search { margin-bottom: 18px; }
+.planner-notice { background: #eaf7f0; color: #176244; padding: 14px 16px; border-radius: 10px; margin: 14px 0; font-size: 14px; overflow-wrap: anywhere; }
+.planner-notice p { margin: 8px 0; }
+.planner-notice.error { background: #fff0ee; color: #a3332b; }
+.planner-product img { width: 100%; height: 180px; object-fit: contain; border-radius: 8px; background: #fafbfd; }
+.planner-product h3 { margin-bottom: 8px; }
+.planner-product p { color: #64748b; font-size: 14px; }
+.planner-step { display: flex; gap: 14px; padding: 15px 0; border-bottom: 1px solid #edf0f5; }
+.planner-step:last-child { border-bottom: 0; }
+.planner-step .step-number { flex-shrink: 0; }
+.step-instructions { white-space: pre-line; font-size: 13px; color: #64748b; margin-bottom: 0; line-height: 1.8; }
+#planner-supervision-section { margin-top: 24px; }
+#refresh-supervision { margin-bottom: 8px; }
+.unit-row { border: 1px solid #e1e7ef; border-radius: 12px; background: white; margin-top: 12px; padding: 18px 20px; }
+.unit-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.unit-supervisor-name { font-size: 14px; color: #176244; }
+.unit-controls { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 12px; align-items: center; margin-top: 14px; }
+.persistent-planner .unit-controls button:disabled { cursor: not-allowed; }
+@media (max-width: 720px) {
+    .planner-grid { grid-template-columns: 1fr; gap: 0; }
+    .persistent-planner .planner-content { padding: 20px 14px; }
+    .persistent-planner .top-bar { padding-left: 14px; padding-right: 14px; }
+    .persistent-planner .brand-title { font-size: 17px; }
+    .persistent-planner h1 { font-size: 23px; }
+    .persistent-planner .form-card, .persistent-planner .info-card { padding: 18px; }
+    .persistent-planner .two-column { grid-template-columns: 1fr; gap: 0; }
+    .planner-heading { align-items: flex-start; }
+    .contractor-fields { padding: 16px; }
+    .unit-controls { grid-template-columns: 1fr; gap: 10px; }
+    .unit-row { padding: 16px; }
+}

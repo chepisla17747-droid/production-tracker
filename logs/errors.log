@@ -1,0 +1,20 @@
+2026-10-08 09:03:43 +0700 ERROR [uvicorn.error] Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Desktop\4th year project\.venv\Lib\site-packages\starlette\routing.py", line 648, in lifespan
+    async with self.lifespan_context(app) as maybe_state:
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Desktop\4th year project\.venv\Lib\site-packages\fastapi\routing.py", line 240, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Desktop\4th year project\backend\fastapi\post.py", line 99, in lifespan
+    app.state.public_origin = _public_origin(origin)
+                              ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Desktop\4th year project\backend\fastapi\post.py", line 80, in _public_origin
+    raise ValueError('TRACKER_PUBLIC_ORIGIN must be one http(s) origin without a path')
+ValueError: TRACKER_PUBLIC_ORIGIN must be one http(s) origin without a path
+
+2026-10-08 09:03:43 +0700 ERROR [uvicorn.error] Application startup failed. Exiting.
+2026-10-08 09:03:43 +0700 CRITICAL [tracker.server] Server stopped: start-up failed (exit status 3)

@@ -1,0 +1,27 @@
+<!--
+  Caddy, the HTTPS front for Production Tracker, as a Windows service run by WinSW 2.12. Copy
+  WinSW-x64.exe to C:\ProductionTracker\caddy\caddy-service.exe and this file next to it as
+  caddy-service.xml, then run: caddy-service.exe install
+  Steps: docs/deployment/windows-intranet.md
+-->
+<service>
+  <id>production-tracker-https</id>
+  <name>Production Tracker HTTPS (Caddy)</name>
+  <description>Serves Production Tracker over HTTPS on ports 443/80 and forwards to 127.0.0.1:8000.</description>
+  <executable>%BASE%\caddy.exe</executable>
+  <arguments>run --config "%BASE%\Caddyfile" --adapter caddyfile</arguments>
+  <!-- Keep Caddy's certificates and keys here rather than in a service profile's AppData. -->
+  <env name="XDG_DATA_HOME" value="%BASE%\data"/>
+  <env name="XDG_CONFIG_HOME" value="%BASE%\config"/>
+  <serviceaccount>
+    <domain>NT AUTHORITY</domain>
+    <user>LocalService</user>
+  </serviceaccount>
+  <onfailure action="restart" delay="5 sec"/>
+  <resetfailure>1 hour</resetfailure>
+  <logpath>%BASE%\logs</logpath>
+  <log mode="roll-by-size">
+    <sizeThreshold>10240</sizeThreshold>
+    <keepFiles>8</keepFiles>
+  </log>
+</service>

@@ -1,0 +1,89 @@
+/* Manager overview. Reuses the supervisor card grid and statistics tables. */
+.overview-week { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:14px; }
+.overview-week button:disabled, .overview-pages button:disabled { color:#a6b0bf; cursor:default; }
+.overview-tiles { display:grid; grid-template-columns:repeat(3, 1fr); gap:14px; margin-bottom:22px; }
+.overview-tile { display:flex; flex-direction:column; align-items:center; gap:4px; background:white;
+  border:1px solid #e4e9f1; border-radius:14px; padding:18px 12px; }
+.overview-tile strong { font-size:30px; line-height:1.1; }
+.overview-tile span { font-size:13px; color:#5b6472; }
+.overview-tile.complete strong { color:#18704d; }
+.overview-tile.in_process strong { color:#2464ad; }
+.overview-tile.delayed strong { color:#b3261e; }
+.manager-page .overview-statuses { margin:14px 0 18px; }
+.manager-page .form-input { width:100%; box-sizing:border-box; }
+.overview-pages { display:flex; justify-content:space-between; align-items:center; gap:12px; margin-top:16px; font-size:14px; }
+.overview-empty { text-align:center; padding:24px 0; }
+
+.order-status { border-radius:16px; padding:5px 9px; font-size:12px; white-space:nowrap; background:#edf2fa; color:#52647d; }
+.order-status.in_process { background:#e9f2ff; color:#2464ad; }
+.order-status.complete { background:#e3f5ec; color:#18704d; }
+.order-status.delayed { background:#fdecea; color:#b3261e; }
+
+.manager-page progress, .order-progress { width:100%; height:8px; border:0; border-radius:8px; overflow:hidden; accent-color:#2670c9; }
+.order-progress::-webkit-progress-bar { background:#edf1f7; }
+.order-progress::-webkit-progress-value { background:#2670c9; }
+.order-progress.complete::-webkit-progress-value { background:#1f8a5b; }
+.order-progress.delayed::-webkit-progress-value { background:#c0392b; }
+.order-progress.complete { accent-color:#1f8a5b; }
+.order-progress.delayed { accent-color:#c0392b; }
+.order-card-footer span:last-child { color:#64748b; }
+/* A completion date is information, not a warning: the badge already says late or on time. */
+.part-card-footer.history-card-footer span:last-child { color:#64748b; }
+
+.order-summary-top { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; }
+.planner-page .order-summary-top h2, .planner-page .order-summary-top h3 { margin:0; }
+.order-summary { margin-top:18px; border-top:1px solid #e9edf4; padding-top:16px; }
+.manager-page .order-summary { margin-top:0; border-top:0; padding-top:0; }
+.planner-page .order-facts { display:grid; grid-template-columns:max-content 1fr; gap:6px 16px; margin:16px 0; font-size:14px; }
+.order-page .info-card > .order-facts { margin:0; }
+.order-facts dt { color:#64748b; }
+.order-facts dd { margin:0; overflow-wrap:anywhere; }
+.order-summary h4 { font-size:14px; margin:18px 0 8px; }
+.order-step-counts { list-style:none; padding:0; margin:0; font-size:14px; }
+.order-step-counts li { display:flex; justify-content:space-between; gap:12px; padding:7px 0; border-bottom:1px solid #eef1f6; }
+.order-step-counts li.current { font-weight:600; color:#2464ad; }
+.order-open-link { display:inline-block; margin-top:18px; text-decoration:none; }
+.order-page > * + * { margin-top:18px; }
+/* The reason field and Reverse share the cell; a full-width input pushed the button out. */
+.action-reverse { display:flex; flex-wrap:wrap; align-items:center; gap:6px 10px; min-width:260px; white-space:normal; }
+.persistent-planner .action-reverse .form-input { flex:1 1 170px; width:auto; min-width:0; height:36px; font-size:14px; }
+.action-reverse > div { flex-basis:100%; }
+
+@media(max-width:720px) {
+  .overview-tiles { gap:8px; }
+  .overview-tile { padding:12px 6px; }
+  .overview-tile strong { font-size:24px; }
+  .overview-week { flex-wrap:wrap; justify-content:center; }
+  .overview-week strong { order:-1; width:100%; text-align:center; }
+}
+.order-status.cancelled { background:#f1f3f7; color:#5b6472; text-decoration:line-through; }
+
+/* Orders page: one expandable row per order, like the Operations employee list. */
+.order-row-top { display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-left:8px; }
+.order-row-action { margin-left:auto; color:#2464ad; font-size:13px; font-weight:600; }
+.orders-page .contractor-contact { margin-left:8px; }
+.orders-page .form-input { width:100%; box-sizing:border-box; }
+.planner-page .danger { color:#b3261e; }
+.planner-page .planner-secondary.danger { color:white; background:#b3261e; border-color:#b3261e; }
+.request-badge { display:inline-block; padding:2px 8px; border-radius:12px; background:#fff4e5; color:#7a4405; font-weight:600; font-size:12px; }
+.corrective-request { border:1px solid #f1c9c4; border-left:4px solid #b3261e; border-radius:10px; padding:12px 14px; margin-top:10px; }
+.alerts-card { margin-bottom:18px; }
+.alerts-card summary h2 { display:inline; }
+.alert-list { list-style:none; padding:0; margin:10px 0 0; display:grid; gap:8px; }
+.alert-list li { display:flex; gap:10px; align-items:baseline; flex-wrap:wrap; }
+.alert-tag { border-radius:12px; padding:2px 8px; font-size:12px; font-weight:600; background:#edf2fa; color:#52647d; }
+.alert-tag.delayed, .alert-tag.request { background:#fdecea; color:#a3261e; }
+.alert-tag.pause, .alert-tag.slow { background:#fff4e5; color:#7a4405; }
+/* Printable order sheet: details beside a QR code, without the site's navigation. */
+.order-sheet { display:flex; gap:32px; align-items:flex-start; flex-wrap:wrap; background:white; border:1px solid #e1e7ef; border-radius:14px; padding:24px; margin:20px 0; }
+.sheet-qr { margin:0; text-align:center; }
+.sheet-qr img { width:220px; height:220px; image-rendering:pixelated; }
+.sheet-qr figcaption { font-size:13px; color:#52647d; max-width:220px; }
+@media print {
+  .top-bar, .no-print, .page-nav, .logout-controls { display:none !important; }
+  .order-sheet { border:0; padding:0; }
+}
+/* Finish-time forecast */
+.order-forecast { display:block; margin-top:8px; font-size:13px; color:#18704d; }
+.order-forecast.late { color:#b3261e; font-weight:600; }
+.alert-tag.forecast { background:#fff4e5; color:#7a4405; }
